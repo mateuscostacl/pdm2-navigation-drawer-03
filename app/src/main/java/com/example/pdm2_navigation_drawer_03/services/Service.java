@@ -21,7 +21,7 @@ public class Service extends AppCompatActivity {
 
 
     private String TAG = Service.class.getSimpleName();
-    private static String URL = "https://my-json-server.typicode.com/mateuscostacl/pdm2-consumo-json";
+    private static String URL = "https://my-json-server.typicode.com/mateuscostacl/pdm2-navigation-drawer-03/perguntas";
     Questao questao = new Questao();
     List<Questao> questaoList = new ArrayList<>();
 
