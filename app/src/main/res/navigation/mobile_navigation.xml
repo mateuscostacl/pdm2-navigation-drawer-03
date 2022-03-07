@@ -7,19 +7,25 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.pdm2_navigation_drawer_03.ui.home.HomeFragment"
+        android:name="com.example.pdm2_navigation_drawer_03.ui.q1Fragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.pdm2_navigation_drawer_03.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_q1"
+        android:name="com.example.pdm2_navigation_drawer_03.ui.q1Fragment"
+        android:label="@string/menu_q1"
+        tools:layout="@layout/fragment_q1" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.pdm2_navigation_drawer_03.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_q2"
+        android:name="com.example.pdm2_navigation_drawer_03.ui.Q2Fragment"
+        android:label="@string/menu_q2"
+        tools:layout="@layout/fragment_q2" />
+
+    <fragment
+        android:id="@+id/nav_q3"
+        android:name="com.example.pdm2_navigation_drawer_03.ui.Q3Fragment"
+        android:label="@string/menu_q3"
+        tools:layout="@layout/fragment_q3" />
 </navigation>
