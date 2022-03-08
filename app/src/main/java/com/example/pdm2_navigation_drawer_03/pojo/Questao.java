@@ -1,5 +1,6 @@
 package com.example.pdm2_navigation_drawer_03.pojo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.google.gson.annotations.Expose;
@@ -12,7 +13,7 @@ public class Questao {
     private String questao;
     @SerializedName("alternativas")
     @Expose
-    private List<Alternativa> alternativas = null;
+    private List<Alternativa> alternativas = new ArrayList<>();
 
     public String getQuestao() {
         return questao;

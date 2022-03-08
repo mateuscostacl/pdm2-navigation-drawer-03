@@ -22,7 +22,7 @@ public class Service extends AppCompatActivity {
 
     private String TAG = Service.class.getSimpleName();
     private static String URL = "https://my-json-server.typicode.com/mateuscostacl/pdm2-navigation-drawer-03/perguntas";
-    Questao questao = new Questao();
+
     List<Questao> questaoList = new ArrayList<>();
 
     public List<Questao> getPerguntas() {
@@ -49,7 +49,6 @@ public class Service extends AppCompatActivity {
             Log.e(TAG, "Endereço da URL: " + params[0]);
             Log.e(TAG, "Resposta da URL: " + jsonStr);
 
-            Alternativa alternativa = new Alternativa();
 
             if (jsonStr != null) {
                 try {
@@ -58,12 +57,14 @@ public class Service extends AppCompatActivity {
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject q = jsonArray.getJSONObject(i);
 
+                        Questao questao = new Questao();
                         questao.setQuestao(q.getString("questao"));
 
                         JSONArray jsonAlt = q.getJSONArray("alternativas");
-                        for (int j = 0; i < jsonAlt.length(); i++) {
-                            JSONObject alt = jsonAlt.getJSONObject(i);
+                        for (int j = 0; j < jsonAlt.length(); j++) {
+                            JSONObject alt = jsonAlt.getJSONObject(j);
 
+                            Alternativa alternativa = new Alternativa();
                             alternativa.setTexto(alt.getString("texto"));
                             alternativa.setCerto(alt.getInt("certo"));
 

@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
 
+import com.airbnb.lottie.LottieAnimationView;
+import com.example.pdm2_navigation_drawer_03.databinding.ActivityMainBinding;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
@@ -14,7 +16,6 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.pdm2_navigation_drawer_03.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home,
                 R.id.nav_q1,
+                R.id.nav_home,
                 R.id.nav_q2,
                 R.id.nav_q3)
                 .setOpenableLayout(drawer)
@@ -50,6 +51,20 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        MainActivity.lottieAnimationView = findViewById(R.id.animation_view);
+    }
+
+    public static LottieAnimationView lottieAnimationView;
+
+    public static void animar(int rawId){
+        MainActivity.lottieAnimationView.setAnimation(rawId);
+        MainActivity.lottieAnimationView.setRepeatCount(1);
+        MainActivity.lottieAnimationView.playAnimation();
+    }
+
+    public static void desanimar(){
+        MainActivity.lottieAnimationView.clearAnimation();
     }
 
     @Override
